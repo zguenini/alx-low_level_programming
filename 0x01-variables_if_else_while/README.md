@@ -132,3 +132,4 @@
 - You can only use `putchar` eight times maximum in your code
 - You are not allowed to use any variable of type `char`
 - All your code should be in the `main` function
+.
