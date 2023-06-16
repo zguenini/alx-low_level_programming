@@ -8,7 +8,7 @@
 - [Arithmetic Operators in C](https://intranet.alxswe.com/rltoken/S-b9MN2iELhSEwCI093Vzw).
 - [If statements in C](https://intranet.alxswe.com/rltoken/usvxrTB3ko5kGTq48p5fSAl).
 - [if…else statement](https://intranet.alxswe.com/rltoken/CU6mSX1qdZKOhDEgmToUGA).
-- [Relational operators]https://intranet.alxswe.com/rltoken/O1N-qacaTC-BHXm3Dp3eUA).
+- [Relational operators](https://intranet.alxswe.com/rltoken/O1N-qacaTC-BHXm3Dp3eUA).
 - [Logical operators](https://intranet.alxswe.com/rltoken/TaX_y6ll4cRfxCrxG8ZuNQ).
 - [while loop in C](https://intranet.alxswe.com/rltoken/mwx2_bj3gIFEgCqdwdTp4w).
 - [While loop](https://intranet.alxswe.com/rltoken/MW4Ob-6JLWt7Zn6vZ0EsBw).
@@ -49,11 +49,11 @@
 - The variable `n` will store a different value every time you will run this program
 - You don’t have to understand what `rand`, `srand`, `RAND_MAX` do. Please do not touch this code
 - The output of the program should be:
-  -The number, followed by
-   -if the number is greater than 0: `is positive`
-   -if the number is 0: `is zero`
-   -if the number is less than 0: `is negative`
-  -followed by a new line
+  - The number, followed by
+   - if the number is greater than 0: `is positive`
+   - if the number is 0: `is zero`
+   - if the number is less than 0: `is negative`
+  - followed by a new line
 1. [The last digit](./1-last_digit.c): This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print the last digit of the number stored in the variable `n`.
 - You can find the source code [here](https://intranet.alxswe.com/rltoken/rud8wr5x6VWeahUtd5P14A)
 - The variable `n` will store a different value every time you run this program
@@ -101,4 +101,34 @@
 - All your code should be in the `main` function
 - You can only use `putchar` four times maximum in your code
 - You are not allowed to use any variable of type `char`
-
+10. [Inventing is a combination of brains and materials. The more brains you use, the less material you need](./100-print_comb3.c): Write a program that prints all possible different combinations of two digits.
+- Numbers must be separated by ,, followed by a space
+- The two digits must be different
+- `01` and `10` are considered the same combination of the two digits `0` and `1`
+- Print only the smallest combination of two digits
+- Numbers should be printed in ascending order, with two digits
+- You can only use the `putchar` function (every other function (`printf`, `puts`, etc…) is forbidden)
+- You can only use `putchar` five times maximum in your code
+- You are not allowed to use any variable of type `char`
+- All your code should be in the `main` function
+11. [The success combination in business is: Do what you do better... and: do more of what you do...](./101-print_comb4.c): Write a program that prints all possible different combinations of three digits.
+- Numbers must be separated by ,, followed by a space
+- The three digits must be different
+- `012`, `120v, `102`, `021`, `201`, `210` are considered the same combination of the three digits `0`, `1` and `2`
+- Print only the smallest combination of three digits
+- Numbers should be printed in ascending order, with three digits
+- You can only use the `putchar` function (every other function (`printf`, `puts`, etc…) is forbidden)
+- You can only use `putchar` six times maximum in your code
+- You are not allowed to use any variable of type `char`
+- All your code should be in the `main` function
+12. [Software is eating the World](./102-print_comb5.c): Write a program that prints all possible combinations of two two-digit numbers.
+- The numbers should range from `0` to `99`
+- The two numbers should be separated by a space
+- All numbers should be printed with two digits. `1` should be printed as `01`
+- The combination of numbers must be separated by comma, followed by a space
+- The combinations of numbers should be printed in ascending order
+- `00` `01` and `01` `00` are considered as the same combination of the numbers `0` and `1`
+- You can only use the `putchar` function (every other function (`printf`, `puts`, etc…) is forbidden)
+- You can only use `putchar` eight times maximum in your code
+- You are not allowed to use any variable of type `char`
+- All your code should be in the `main` function
