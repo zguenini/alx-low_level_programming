@@ -10,6 +10,10 @@ The Mastering C Programming repository is created and maintained by a team of ex
 
 ## Project
 
-[0x00. C - Hello, World](./0x00-hello_world): directory focuses on introducing the basics of C programming. It provides a foundational understanding of how to write and compile a simple "Hello, World" program in C. This section serves as a starting point for beginners, helping them get familiar with the C programming environment and the process of running a C program.
+[0x00. C - Hello, World](./0x00-hello_world): This directory covers the basics of C programming and guides beginners through writing and compiling a simple "Hello, World" program in C.
 
-[0x01. C - Variables, if, else, while](./0x01-variables_if_else_while): directory delves into essential concepts such as variables, conditional statements (if-else), and loop structures (while) in C. It explores how to declare and initialize variables, perform conditional checks, and create loops for iterative operations. This section builds upon the foundational knowledge gained in the previous section, enabling learners to write more complex C programs by incorporating variables, conditionals, and loops.
+[0x01. C - Variables, if, else, while](./0x01-variables_if_else_while): This directory explores essential concepts such as variables, conditional statements (if-else), and loop structures (while) in C. It teaches how to declare and initialize variables, perform conditional checks, and create loops for iterative operations.
+
+[0x02. C - Functions, nested loops](0x02-functions_nested_loops): This directory expands on C programming by introducing functions and nested loops. Learners will understand how to create and use functions, pass arguments, and return values. They will also explore the concept of nested loops to perform repetitive tasks efficiently.
+
+[0x03. C - Debugging](./0x03-debugging): This directory focuses on the crucial skill of debugging code. It covers common types of bugs in C programs and introduces debugging tools and techniques to identify and fix errors effectively. Debugging skills are essential for understanding code behavior and ensuring program functionality.
