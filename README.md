@@ -17,3 +17,4 @@ The Mastering C Programming repository is created and maintained by a team of ex
 [0x02. C - Functions, nested loops](0x02-functions_nested_loops): This directory expands on C programming by introducing functions and nested loops. Learners will understand how to create and use functions, pass arguments, and return values. They will also explore the concept of nested loops to perform repetitive tasks efficiently.
 
 [0x03. C - Debugging](./0x03-debugging): This directory focuses on the crucial skill of debugging code. It covers common types of bugs in C programs and introduces debugging tools and techniques to identify and fix errors effectively. Debugging skills are essential for understanding code behavior and ensuring program functionality.
+0x04-more_functions_nested_loops
