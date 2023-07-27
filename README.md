@@ -45,5 +45,7 @@ Mastering C Programming: From Fundamentals to Advanced Concepts is a comprehensi
 
 [0x10. C - Variadic functions](./0x10-variadic_functions): Variadic functions are functions that can accept a variable number of arguments. In this section, learners will dive into variadic functions in C, understanding their syntax, implementation, and use cases. Mastering variadic functions allows developers to create functions that can handle different numbers of arguments.
 
+[0x11. C - printf](../printf): This directory likely covers an exploration of the `printf` function in C, which is used for formatted output. Learners will discover the various format specifiers and options available in `printf`, enabling them to format and display data in different ways.
+
 [0x12. C - Singly linked lists](./0x12-singly_linked_lists): Linked lists are fundamental data structures used to organize and store data dynamically. This directory introduces learners to singly linked lists in C and teaches them how to create, manipulate, and free linked lists. Understanding linked lists is crucial for working with dynamic data and developing more sophisticated data structures.
 
