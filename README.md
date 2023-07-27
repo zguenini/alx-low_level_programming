@@ -6,7 +6,7 @@
 Mastering C Programming: From Fundamentals to Advanced Concepts is a comprehensive repository designed to help you become proficient in the C programming language. Whether you are a beginner or have some programming experience, this repository provides the necessary knowledge and hands-on exercises to master C programming. Starting from the basics, such as variables, data types, and control flow, the repository progresses to more advanced topics like arrays, pointers, file handling, and dynamic memory allocation. With detailed explanations, code examples, and projects, you will gain a deep understanding of C programming and develop practical skills.
 
 ## About
- This repository consists of all the C programming projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Zguenini](https://github.com/zguenini) for the task "alx-low_level_programming".
+ This repository consists of all ***Alx-Low_Level_programming*** projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Zguenini](https://github.com/zguenini).
 - All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
 
 ## Project
