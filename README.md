@@ -1,4 +1,4 @@
-![img](../img/ALX.jpg)
+![img](./img/ALX.jpg)
 # Mastering C Programming: From Fundamentals to Advanced Concepts
 
 ## Description
