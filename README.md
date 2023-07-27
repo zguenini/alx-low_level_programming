@@ -8,7 +8,6 @@ Mastering C Programming: From Fundamentals to Advanced Concepts is a comprehensi
 ## About
  This repository consists of all the C programming projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Zguenini](https://github.com/zguenini).
 - All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
-- The Mastering C Programming repository is created and maintained by a team of experienced programmers with a passion for teaching. The goal is to provide a valuable resource for individuals looking to enhance their C programming skills. Contributions to the repository are welcomed, as the collective effort of the programming community can improve and expand the repository's content. By leveraging this repository, you can embark on a journey to master C programming, unlock exciting career opportunities, and build efficient software solutions.
 
 ## Project
 
