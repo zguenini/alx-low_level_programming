@@ -11,7 +11,8 @@
 - All the `*-main.c` files will be stored in the [main](./main) directory.
 
 - Use this data structure.
-	```/**
+	```
+	/**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
  * @len: length of the string
@@ -25,6 +26,7 @@ typedef struct list_s
     unsigned int len;
     struct list_s *next;
 } list_t;
+
 	```
 
 ## Tasks
