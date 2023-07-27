@@ -6,8 +6,9 @@
 Mastering C Programming: From Fundamentals to Advanced Concepts is a comprehensive repository designed to help you become proficient in the C programming language. Whether you are a beginner or have some programming experience, this repository provides the necessary knowledge and hands-on exercises to master C programming. Starting from the basics, such as variables, data types, and control flow, the repository progresses to more advanced topics like arrays, pointers, file handling, and dynamic memory allocation. With detailed explanations, code examples, and projects, you will gain a deep understanding of C programming and develop practical skills.
 
 ## About
-
-The Mastering C Programming repository is created and maintained by a team of experienced programmers with a passion for teaching. The goal is to provide a valuable resource for individuals looking to enhance their C programming skills. Contributions to the repository are welcomed, as the collective effort of the programming community can improve and expand the repository's content. By leveraging this repository, you can embark on a journey to master C programming, unlock exciting career opportunities, and build efficient software solutions.
+ This repository consists of all the C programming projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with [Holberton School](https://www.holbertonschool.com/) by [Zguenini](https://github.com/zguenini).
+- All main.c files are prewritten by the school. We build functions that produce a specific output while also taking into consideration edge cases.
+- The Mastering C Programming repository is created and maintained by a team of experienced programmers with a passion for teaching. The goal is to provide a valuable resource for individuals looking to enhance their C programming skills. Contributions to the repository are welcomed, as the collective effort of the programming community can improve and expand the repository's content. By leveraging this repository, you can embark on a journey to master C programming, unlock exciting career opportunities, and build efficient software solutions.
 
 ## Project
 
