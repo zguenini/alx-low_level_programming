@@ -19,3 +19,4 @@ Mastering C Programming: From Fundamentals to Advanced Concepts is a comprehensi
 
 [0x03. C - Debugging](./0x03-debugging): This directory focuses on the crucial skill of debugging code. It covers common types of bugs in C programs and introduces debugging tools and techniques to identify and fix errors effectively. Debugging skills are essential for understanding code behavior and ensuring program functionality.
 0x04-more_functions_nested_loops
+
