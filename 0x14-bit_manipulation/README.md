@@ -1,6 +1,6 @@
 # 0x14. C - Bit manipulation 
 
-![img](../.imgs/bit_manipulation.png)
+![img](../.imgs/bitwise.png)
 
 ## Resource
 
