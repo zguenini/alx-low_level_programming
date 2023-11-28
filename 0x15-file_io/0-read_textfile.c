@@ -1,52 +1,48 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * Read a file and print it to the POSIX stdout
- * 
+ * read_textfile - a function that reads a text file and prints it
+ *                to POSIX standard output.
  *
- * The actual num of letters it could read and print
- */
-
+ * @filename: is the file to read
+ * @letters: number of letters to read and print from file
+ *
+ * Return: 0 if it fails or actual number of letters it could
+ *         read and print
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
-
 {
-	int rd;
-	int i;
-	int reading;
-	char *buf;
+	int file;
+	ssize_t read_check, wcount;
+	char *buffer;
 
-	if (filename == NULL)
+	if (filename == NULL) /*check if file is present*/
 		return (0);
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
+
+	file = open(filename, O_RDONLY); /*open file*/
+
+	if (file == -1)
 		return (0);
-	rd = open(filename, O_RDONLY);
-	if (rd == -1)
+
+	/*get the size of buffer from number of letters*/
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 	{
-		free(buf);
+		free(buffer);
 		return (0);
 	}
 
-	reading = read(rd, buf, letters);
-	if (reading == -1)
-	{
-		close(rd);
-		free(buf);
+	read_check = read(file, buffer, letters); /*read file*/
+	if (read_check == -1) /*check if read failed*/
 		return (0);
-	}
 
-	for (i = 0; i < reading; i++)
-	{
-		if (write(STDOUT_FILENO, &buf[i], 1) == -1)
-		{
-			close(rd);
-			free(buf);
-			return (0);
-		}
+	wcount = write(STDOUT_FILENO, buffer, read_check); /*write to POSIX*/
+	if (wcount == -1 || read_check != wcount) /*check if write failed*/
+		return (0);
 
-	}
-	close(rd);
-	free(buf);
-	return (reading);
+	free(buffer);
+
+	close(file); /*close file*/
+
+	return (wcount);
 }
