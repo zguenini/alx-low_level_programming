@@ -1,86 +1,130 @@
 #include "main.h"
 
-#define MAXSIZE 1024
-
+int write_to_file(char *buff, int to_fd, int read_chars, char *f_to);
+int read_files(int from_fd, int to_fd, char *f_from, char *f_to);
+int open_files(char *f_from, char *f_to);
 
 /**
- * __exit - prints error messages and exits with exit number
- *
- * @error: either the exit number or file descriptor
- * @str: name of either file_in or file_out
- * @fd: file descriptor
- *
- * Return: 0 on success
-*/
-int __exit(int error, char *str, int fd)
+ * main - Entry point and run
+ * 
+ */
+
+int main(int argc, char **argv)
+
 {
-	switch (error)
+	char *f_from;
+	char *f_to;
+
+	if (argc != 3)
 	{
-		case 97:
-			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-			exit(error);
-		case 98:
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
-			exit(error);
-		case 99:
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
-			exit(error);
-		case 100:
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-			exit(error);
-		default:
-			return (0);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
+	f_from = argv[1];
+	f_to = argv[2];
+
+	open_files(f_from, f_to);
+	exit(0);
+	return (0);
 }
 
 /**
- * main - create a copy of file
+ * 
  *
- * @argc: argument counter
- * @argv: argument vector
- *
- * Return: 0 for success.
-*/
-int main(int argc, char *argv[])
+ */
+
+int open_files(char *f_from, char *f_to)
+
 {
-	int file_in, file_out;
-	int read_stat, write_stat;
-	int close_in, close_out;
-	char buffer[MAXSIZE];
+	int from_fd;
+	int to_fd;
 
-	/*if arguments are not 3*/
-	if (argc != 3)
-		__exit(97, NULL, 0);
-
-	/*sets file descriptor for copy from file*/
-	file_in = open(argv[1], O_RDONLY);
-	if (file_in == -1)
-		__exit(98, argv[1], 0);
-
-	/*sets file descriptor for copy to file*/
-	file_out = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (file_out == -1)
-		__exit(99, argv[2], 0);
-
-	/*reads file_in as long as its not NULL*/
-	while ((read_stat = read(file_in, buffer, MAXSIZE)) != 0)
+	from_fd = open(f_from, O_RDONLY);
+	if (from_fd == -1)
 	{
-		if (read_stat == -1)
-			__exit(98, argv[1], 0);
-
-		/*copy and write contents to file_out*/
-		write_stat = write(file_out, buffer, read_stat);
-		if (write_stat == -1)
-			__exit(99, argv[2], 0);
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", f_from);
+		exit(98);
 	}
+	to_fd = open(f_to, O_CREAT | O_EXCL | O_WRONLY, 0664);
+	if (to_fd == -1)
+	{
+		/*if (errno == EEXIST) was removed*/
+		to_fd = open(f_to, O_WRONLY | O_TRUNC);
+		if (to_fd == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", f_to);
+			exit(99);
+		}
+	}
+	read_files(from_fd, to_fd, f_from, f_to);
+	if (close(from_fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_fd);
+		exit(100);
+	}
+	if (close(to_fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to_fd);
+		exit(100);
+	}
+	return (0);
+}
 
-	close_in = close(file_in); /*close file_in*/
-	if (close_in == -1)
-		__exit(100, NULL, file_in);
+/**
+ * 
+ *
+ */
 
-	close_out = close(file_out); /*close file_out*/
-	if (close_out == -1)
-		__exit(100, NULL, file_out);
+int read_files(int from_fd, int to_fd, char *f_from, char *f_to)
 
+{
+	int read_chars;
+	char buff[1024];
+
+	read_chars = read(from_fd, buff, 1024);
+	if (read_chars == -1)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", f_from);
+		exit(98);
+	}
+	write_to_file(buff, to_fd, read_chars, f_to);
+	while (read_chars != 0)
+	{
+		read_chars = read(from_fd, buff, 1024);
+		if (read_chars == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", f_from);
+			exit(98);
+		}
+		if (read_chars == 0)
+			return (0);
+		write_to_file(buff, to_fd, read_chars, f_to);
+	}
+	return (0);
+}
+
+/**
+ * 
+ *
+ */
+
+int write_to_file(char *buff, int to_fd, int read_chars, char *f_to)
+
+{
+	int i;
+
+	for (i = 0; i < read_chars; i++)
+	{
+		if (write(to_fd, &buff[i], 1) == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", f_to);
+			exit(99);
+		}
+	}
 	return (0);
 }
