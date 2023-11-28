@@ -2,27 +2,51 @@
 #include <stdlib.h>
 
 /**
- * read_textfile- will read text file print to STDOUT.
- * @filename: text file being read
- * @letters: numbers  of letters to be read
- * Return: w- actual number of bytes read and printed
- *        0 when function fails or filename is NULL.
+ * Read a file and print it to the POSIX stdout
+ * 
+ *
+ * The actual num of letters it could read and print
  */
-ssize_t read_textfile(const char *filename, size_t letters)
-{
-	char *buf;
-	ssize_t fd;
-	ssize_t w;
-	ssize_t t;
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+ssize_t read_textfile(const char *filename, size_t letters)
+
+{
+	int rd;
+	int i;
+	int reading;
+	char *buf;
+
+	if (filename == NULL)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
-	t = read(fd, buf, letters);
-	w = write(STDOUT_FILENO, buf, t);
+	if (buf == NULL)
+		return (0);
+	rd = open(filename, O_RDONLY);
+	if (rd == -1)
+	{
+		free(buf);
+		return (0);
+	}
 
+	reading = read(rd, buf, letters);
+	if (reading == -1)
+	{
+		close(rd);
+		free(buf);
+		return (0);
+	}
+
+	for (i = 0; i < reading; i++)
+	{
+		if (write(STDOUT_FILENO, &buf[i], 1) == -1)
+		{
+			close(rd);
+			free(buf);
+			return (0);
+		}
+
+	}
+	close(rd);
 	free(buf);
-	close(fd);
-	return (w);
+	return (reading);
 }
